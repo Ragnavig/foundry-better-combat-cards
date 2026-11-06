@@ -40,17 +40,22 @@ jobs:
 
       - name: Build module.zip
         run: |
-          zip -r module.zip module.json README.md LICENSE CHANGELOG.md scripts styles lang templates \
-            -x '*.DS_Store'
+          zip -r module.zip module.json README.md LICENSE CHANGELOG.md CONTRIBUTORS.md \
+            scripts styles lang templates -x '*.DS_Store'
 
       - name: Publish release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # A 0.x tag is published as a pre-release.
+          flags=""
+          case "$GITHUB_REF_NAME" in
+            v0.*) flags="--prerelease" ;;
+          esac
           if gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
             gh release upload "$GITHUB_REF_NAME" module.json module.zip --clobber
           else
             gh release create "$GITHUB_REF_NAME" module.json module.zip \
               --title "$GITHUB_REF_NAME" \
-              --generate-notes
+              --generate-notes $flags
           fi

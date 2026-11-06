@@ -1,8 +1,11 @@
 # Changelog
 
-## 1.0.0
+## 0.0.1
 
-- Initial release.
+First published version. **Early and not feature-complete** — the code paths have been
+checked, but the module has not yet been through a real session. Expect rough edges and
+please report what breaks.
+
 - Full source breakdown for attack and damage rolls: ability modifier, proficiency,
   item/activity bonuses, magical weapon and ammunition bonuses, situational bonuses,
   condition penalties and bonuses from active effects, with the granting effect named
@@ -15,4 +18,4 @@
 - Target management after the fact on attack and damage cards, including taking over
   the hit targets of the matching attack roll.
 - Client settings for every display feature, world setting for who may change targets.
-- Verified with Foundry VTT 14 and dnd5e 6.0.6.
+- Written against Foundry VTT 14 and dnd5e 6.0.6.

@@ -5,6 +5,10 @@
 [![Release](https://img.shields.io/github/v/release/Ragnavig/foundry-better-combat-cards?display_name=tag&sort=semver)](https://github.com/Ragnavig/foundry-better-combat-cards/releases/latest)
 [![License](https://img.shields.io/github/license/Ragnavig/foundry-better-combat-cards)](LICENSE)
 
+> **Status: early version (0.0.1).** The module works and every code path has been
+> checked, but it has not yet been through a full session at the table. Treat it as a
+> preview and back up your world before using it in a live game.
+
 The combat chat cards of dnd5e 6.x are compact, but they keep the two questions every
 table asks to themselves:
 
