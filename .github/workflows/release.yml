@@ -55,6 +55,11 @@ jobs:
               --generate-notes
           fi
 
-          # Foundry installs from `releases/latest/download/module.json`, and that URL only
-          # resolves for a full release, so never leave one marked as a pre-release.
-          gh release edit "$GITHUB_REF_NAME" --prerelease=false --latest
+          # Deleting a tag leaves its release behind as a draft, and a draft cannot be marked
+          # as the latest release, so publish it before asking for that. Foundry installs from
+          # `releases/latest/download/module.json`, and that URL resolves for a published,
+          # non-pre-release release only.
+          gh release edit "$GITHUB_REF_NAME" --draft=false --prerelease=false
+          gh release edit "$GITHUB_REF_NAME" --latest
+
+          gh release view "$GITHUB_REF_NAME" --json isDraft,isPrerelease,isLatest,assets
