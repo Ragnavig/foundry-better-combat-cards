@@ -103,6 +103,8 @@ function taggedBreakdown(roll, segments) {
     approximate,
     entries,
     hasSources: entries.length > 0,
+    // A single row already carries the whole result, so a sum underneath it would just repeat it.
+    showTotal: entries.length > 1,
     total: roll.total
   };
 }
@@ -138,7 +140,7 @@ function untaggedBreakdown(roll) {
     entries.push({ dice: [], formula: String(total), kind: "bonus", label: flavor || loc("BCCC.Source.Flat"), value: total });
   }
 
-  return { approximate: false, entries, hasSources: false, total: roll.total };
+  return { approximate: false, entries, hasSources: false, showTotal: entries.length > 1, total: roll.total };
 }
 
 /* -------------------------------------------- */
@@ -214,5 +216,6 @@ export function buildDamageBreakdown(rolls) {
     });
   }
 
-  return { groups, hasSources, total };
+  // With a single damage type the group's own header already shows the total.
+  return { groups, hasSources, showTotal: groups.length > 1, total };
 }

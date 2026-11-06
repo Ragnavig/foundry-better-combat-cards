@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.0.2
+
+Readability pass on the breakdown, from feedback on the first version.
+
+- Each row now reads as one line: the name of the source on the left, the dice it rolled
+  in the middle, what it contributed on the right. The name gets the full width, so long
+  German labels are no longer hyphenated in the middle of a word.
+- A bonus without dice no longer prints its value twice.
+- The die discarded by advantage or disadvantage is drawn next to the kept one as a
+  greyed-out, struck-through die instead of a bare number.
+- The total row is left out where it would only repeat a value that is already shown —
+  a single damage type, or a roll with a single source.
+
 ## 0.0.1
 
 First published version. **Early and not feature-complete** — the code paths have been

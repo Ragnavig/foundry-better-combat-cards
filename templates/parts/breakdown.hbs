@@ -30,14 +30,14 @@
         {{/unless}}
         {{/unless}}
 
-        <section class="tooltip-part constant-term bccc-sum">
+        {{#if breakdown.showTotal}}
+        <section class="tooltip-part bccc-entry bccc-sum">
             <div class="dice">
-                <span class="flavor">{{ localize "BCCC.Breakdown.Total" }}</span>
-                <div class="total">
-                    <span class="value">{{ breakdown.total }}</span>
-                </div>
+                <span class="bccc-label">{{ localize "BCCC.Breakdown.Total" }}</span>
+                <span class="bccc-value">{{ breakdown.total }}</span>
             </div>
         </section>
+        {{/if}}
 
         {{#if breakdown.approximate}}
         <p class="bccc-empty">{{ localize "BCCC.Breakdown.Approximate" }}</p>

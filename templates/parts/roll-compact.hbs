@@ -15,7 +15,12 @@
     </span>
     {{#if bccc.advantage.dropped.length}}
     <span class="bccc-dropped" data-tooltip aria-label="{{ localize "BCCC.Breakdown.Dropped" }}">
-        {{#each bccc.advantage.dropped}}<span class="bccc-die">{{ this }}</span>{{/each}}
+        {{#each bccc.advantage.dropped}}
+        <span class="bccc-die">
+            <i class="fa-fw fa-solid fa-hexagon fa-rotate-90" inert></i>
+            <span class="roll">{{ this }}</span>
+        </span>
+        {{/each}}
     </span>
     {{/if}}
     {{#if d20}}

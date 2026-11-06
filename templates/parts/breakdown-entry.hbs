@@ -1,17 +1,14 @@
 <section class="tooltip-part bccc-entry" data-kind="{{ kind }}">
     <div class="dice">
+        <span class="bccc-label">{{ label }}</span>
+        {{#if dice.length}}
         <ol class="dice-rolls">
             {{#each dice}}
             <li class="roll {{ classes }}">{{{ result }}}</li>
             {{/each}}
-            {{#unless dice.length}}
-            <li class="constant">{{ dnd5e-formatModifier value }}</li>
-            {{/unless}}
         </ol>
-        <div class="total">
-            <span class="label">{{ label }}</span>
-            <span class="value">{{ dnd5e-formatModifier value }}</span>
-        </div>
+        {{/if}}
+        <span class="bccc-value">{{ dnd5e-formatModifier value }}</span>
     </div>
     {{#if note}}
     <p class="bccc-note">{{ note }}</p>
