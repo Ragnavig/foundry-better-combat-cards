@@ -1,0 +1,77 @@
+{{#if (or header mastery)}}
+<div class="chat-card">
+
+    {{!-- Header --}}
+    {{> "dnd5e.card-header" }}
+
+    {{!-- Supplements --}}
+    {{#if mastery}}
+    <p class="supplement">
+        <strong>{{ localize "DND5E.WEAPON.Mastery.Flavor" }}</strong>
+        {{#if mastery.reference}}
+        <a class="content-link" draggable="true" data-link data-uuid="{{ mastery.reference }}"
+           data-tooltip="{{ mastery.label }}">{{ mastery.label }}</a>
+        {{else}}
+        {{ mastery.label }}
+        {{/if}}
+    </p>
+    {{/if}}
+
+    {{!-- Rows --}}
+    {{> "dnd5e.card-rows" }}
+</div>
+{{/if}}
+
+{{!-- Targets --}}
+{{#if targets.length}}
+<section class="icon-row bccc-targets">
+    <i class="fa-fw fa-solid fa-bullseye" aria-label="{{ localize "DND5E.CHATMESSAGE.Row.Targets" }}"></i>
+    <ul class="unlist targets pills">
+        {{#each targets}}
+        <li>
+            <target-pill {{#if showResult}}{{ ifThen isMiss "data-miss" "data-hit" }}{{/if}}
+                {{#if showAC}}data-value="{{ ifThen hasAC ac "∞" }}"{{/if}}>
+                <label>{{ name }}</label>
+                <datalist>
+                    <option value="{{ token }}">{{ name }}</option>
+                </datalist>
+            </target-pill>
+            {{#if ../bccc.showMargin}}
+            {{#if bcccMargin}}
+            <span class="bccc-margin {{ bcccMarginClass }}">{{ bcccMargin }}</span>
+            {{/if}}
+            {{/if}}
+            {{#if ../bccc.targetTools}}
+            <button type="button" class="bccc-remove-target" data-action="bcccRemoveTarget" data-token="{{ token }}"
+                    data-tooltip aria-label="{{ localize "BCCC.Targets.Remove" }}">
+                <i class="fa-solid fa-xmark" inert></i>
+            </button>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
+
+{{!-- Rolls --}}
+{{> "dnd5e.card-rolls" }}
+
+{{!-- Roll damage --}}
+{{#with bccc.damageButton}}
+<section class="icon-row bccc-damage-row">
+    <i class="fa-fw fa-solid fa-burst" aria-label="{{ localize label }}"></i>
+    <ul class="unlist">
+        <li>
+            <button type="button" class="bccc-roll-damage{{#if critical}} critical{{/if}}"
+                    data-action="bcccRollDamage" data-attack-id="{{ attackId }}"
+                    {{~#if originId}} data-message-id="{{ originId }}"{{/if}}>
+                <i class="fa-solid fa-burst" inert></i>
+                <span>{{ localize label }}</span>
+            </button>
+        </li>
+    </ul>
+</section>
+{{/with}}
+
+{{!-- Target tools --}}
+{{> "bccc.target-tools" }}

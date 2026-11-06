@@ -1,0 +1,116 @@
+{
+  "BCCC": {
+    "Breakdown": {
+      "Title": "Aufschlüsselung",
+      "Toggle": "Aufschlüsselung anzeigen",
+      "Total": "Gesamt",
+      "NoSources": "Für diesen Wurf wurden keine Quellen aufgezeichnet.",
+      "Approximate": "Enthält Multiplikation oder Division – Einzelwerte sind Näherungen.",
+      "Dropped": "Verworfen",
+      "Kept": "Gewertet",
+      "Crit": "Kritischer Treffer (verdoppelte Würfel)"
+    },
+    "Advantage": {
+      "Advantage": "Vorteil",
+      "Disadvantage": "Nachteil",
+      "Normal": "Normaler Wurf",
+      "Elven": "Elfische Genauigkeit",
+      "Lucky": "Halbling-Glück",
+      "Reroll": "Neu gewürfelt",
+      "Minimum": "Minimum {value}",
+      "Maximum": "Maximum {value}"
+    },
+    "Source": {
+      "D20": "W20",
+      "Dice": "Würfel",
+      "Flat": "Fester Bonus",
+      "BaseDamage": "Grundschaden",
+      "AbilityMod": "{ability}-Modifikator",
+      "AbilityModGeneric": "Attributsmodifikator",
+      "Proficiency": "Übungsbonus",
+      "ActivityBonus": "Angriffsbonus (Gegenstand/Aktivität)",
+      "DamageBonus": "Schadensbonus (Gegenstand/Aktivität)",
+      "FlatAttack": "Fester Angriffsbonus",
+      "WeaponMagic": "Magischer Waffenbonus",
+      "AmmoMagic": "Magische Munition",
+      "Effects": "Effekte & Merkmale",
+      "EffectsNamed": "Effekt: {name}",
+      "Situational": "Situativer Bonus",
+      "ExtraBonus": "Zusätzlicher Bonus",
+      "Cover": "Deckung",
+      "DeathBonus": "Bonus auf Todesretttungswurf",
+      "Alert": "Alarmbereit",
+      "Condition": "Zustand: {name}",
+      "Scaling": "Skalierung",
+      "PowerfulCritical": "Mächtiger kritischer Treffer",
+      "CriticalBonus": "Zusätzlicher kritischer Schaden",
+      "Unknown": "Sonstiges ({key})"
+    },
+    "Targets": {
+      "Label": "Ziele",
+      "Tools": "Zielwerkzeuge",
+      "FromTargeted": "Meine aktuellen Ziele übernehmen",
+      "FromSelected": "Meine ausgewählten Tokens übernehmen",
+      "AddTargeted": "Meine aktuellen Ziele hinzufügen",
+      "AddSelected": "Meine ausgewählten Tokens hinzufügen",
+      "Clear": "Alle Ziele entfernen",
+      "Remove": "Dieses Ziel entfernen",
+      "FromAttackHits": "Getroffene Ziele des Angriffs übernehmen",
+      "FromAttackAll": "Alle Ziele des Angriffs übernehmen",
+      "None": "Keine Ziele",
+      "Hit": "Treffer",
+      "Miss": "Fehlschlag",
+      "Margin": "{value} gegen RK {ac}",
+      "MarginOver": "{value} über RK",
+      "MarginUnder": "{value} unter RK",
+      "NoAC": "RK unbekannt",
+      "Updated": "Ziele dieser Karte aktualisiert.",
+      "NoneSelected": "Keine Tokens markiert oder ausgewählt.",
+      "NoAttack": "Zu dieser Schadenskarte wurde kein Angriffswurf gefunden."
+    },
+    "Settings": {
+      "ShowBreakdown": {
+        "Name": "Wurf-Aufschlüsselung anzeigen",
+        "Hint": "Ergänzt Angriffs- und Schadenskarten um eine detaillierte Aufschlüsselung mit der Quelle jeder Zahl."
+      },
+      "ExpandBreakdown": {
+        "Name": "Aufschlüsselung immer ausgeklappt",
+        "Hint": "Zeigt die Aufschlüsselung direkt in der Karte statt nur im Hover-Popover."
+      },
+      "ShowDiscarded": {
+        "Name": "Verworfenen Würfel anzeigen",
+        "Hint": "Bei Vorteil oder Nachteil wird auch der nicht gewertete Würfel angezeigt."
+      },
+      "ShowAdvantageBadge": {
+        "Name": "Vorteil/Nachteil-Abzeichen anzeigen",
+        "Hint": "Zeigt direkt auf der Karte immer an, ob mit Vorteil oder Nachteil gewürfelt wurde."
+      },
+      "ShowMargin": {
+        "Name": "Trefferabstand anzeigen",
+        "Hint": "Zeigt, um wie viel ein Angriff die RK des Ziels über- oder unterschritten hat."
+      },
+      "TargetTools": {
+        "Name": "Zielwerkzeuge",
+        "Hint": "Wer die gespeicherten Ziele einer Karte nachträglich ändern darf.",
+        "Off": "Niemand",
+        "Gm": "Nur Spielleitung",
+        "Owner": "Spielleitung und Urheber der Karte"
+      },
+      "EffectNames": {
+        "Name": "Effektnamen auflösen",
+        "Hint": "Versucht, den Aktiven Effekt bzw. das Merkmal hinter einem Bonus zu benennen, statt nur „Effekte & Merkmale“ anzuzeigen."
+      },
+      "DamageButton": {
+        "Name": "Schadens-Button auf Angriffskarten",
+        "Hint": "Bietet auf der Angriffskarte einen Button „Schaden würfeln“, der die getroffenen Ziele des Angriffs übernimmt, damit der Schaden von der Schadenskarte aus auf sie angewendet werden kann.",
+        "Hit": "Nur bei einem Treffer",
+        "Always": "Immer",
+        "Off": "Nie"
+      }
+    },
+    "Damage": {
+      "Roll": "Schaden würfeln",
+      "RollCritical": "Kritischen Schaden würfeln"
+    }
+  }
+}

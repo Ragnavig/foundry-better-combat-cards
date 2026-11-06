@@ -1,0 +1,116 @@
+{
+  "BCCC": {
+    "Breakdown": {
+      "Title": "Breakdown",
+      "Toggle": "Show breakdown",
+      "Total": "Total",
+      "NoSources": "No source information was recorded for this roll.",
+      "Approximate": "Contains multiplication or division — individual values are approximate.",
+      "Dropped": "Dropped",
+      "Kept": "Kept",
+      "Crit": "Critical hit (doubled dice)"
+    },
+    "Advantage": {
+      "Advantage": "Advantage",
+      "Disadvantage": "Disadvantage",
+      "Normal": "Straight roll",
+      "Elven": "Elven Accuracy",
+      "Lucky": "Halfling Lucky",
+      "Reroll": "Rerolled",
+      "Minimum": "Minimum {value}",
+      "Maximum": "Maximum {value}"
+    },
+    "Source": {
+      "D20": "d20",
+      "Dice": "Dice",
+      "Flat": "Flat bonus",
+      "BaseDamage": "Base damage",
+      "AbilityMod": "{ability} modifier",
+      "AbilityModGeneric": "Ability modifier",
+      "Proficiency": "Proficiency bonus",
+      "ActivityBonus": "Attack bonus (item/activity)",
+      "DamageBonus": "Damage bonus (item/activity)",
+      "FlatAttack": "Flat attack bonus",
+      "WeaponMagic": "Magical weapon bonus",
+      "AmmoMagic": "Magical ammunition",
+      "Effects": "Effects & features",
+      "EffectsNamed": "Effect: {name}",
+      "Situational": "Situational bonus",
+      "ExtraBonus": "Extra bonus",
+      "Cover": "Cover",
+      "DeathBonus": "Death save bonus",
+      "Alert": "Alert",
+      "Condition": "Condition: {name}",
+      "Scaling": "Scaling",
+      "PowerfulCritical": "Powerful critical",
+      "CriticalBonus": "Extra critical damage",
+      "Unknown": "Other ({key})"
+    },
+    "Targets": {
+      "Label": "Targets",
+      "Tools": "Target tools",
+      "FromTargeted": "Use my current targets",
+      "FromSelected": "Use my selected tokens",
+      "AddTargeted": "Add my current targets",
+      "AddSelected": "Add my selected tokens",
+      "Clear": "Remove all targets",
+      "Remove": "Remove this target",
+      "FromAttackHits": "Use the targets hit by the attack",
+      "FromAttackAll": "Use all targets of the attack",
+      "None": "No targets",
+      "Hit": "Hit",
+      "Miss": "Miss",
+      "Margin": "{value} vs AC {ac}",
+      "MarginOver": "{value} over AC",
+      "MarginUnder": "{value} under AC",
+      "NoAC": "AC unknown",
+      "Updated": "Targets of this card updated.",
+      "NoneSelected": "No tokens targeted or selected.",
+      "NoAttack": "No attack roll found for this damage card."
+    },
+    "Settings": {
+      "ShowBreakdown": {
+        "Name": "Show roll breakdown",
+        "Hint": "Adds a detailed breakdown with the source of every number to attack and damage cards."
+      },
+      "ExpandBreakdown": {
+        "Name": "Breakdown always expanded",
+        "Hint": "Render the breakdown directly inside the card instead of only in the hover popover."
+      },
+      "ShowDiscarded": {
+        "Name": "Show the dropped die",
+        "Hint": "On advantage or disadvantage the die that was not used is displayed as well."
+      },
+      "ShowAdvantageBadge": {
+        "Name": "Show advantage badge",
+        "Hint": "Always show, directly on the card, whether a roll was made with advantage or disadvantage."
+      },
+      "ShowMargin": {
+        "Name": "Show hit margin",
+        "Hint": "Show by how much an attack beat or missed the target's AC."
+      },
+      "TargetTools": {
+        "Name": "Target tools",
+        "Hint": "Who may change the recorded targets of a card after the fact.",
+        "Off": "Nobody",
+        "Gm": "Game master only",
+        "Owner": "Game master and the author of the card"
+      },
+      "EffectNames": {
+        "Name": "Resolve effect names",
+        "Hint": "Try to name the active effect or feature behind a bonus instead of only showing \"Effects & features\"."
+      },
+      "DamageButton": {
+        "Name": "Damage button on attack cards",
+        "Hint": "Offer a “Roll damage” button on the attack card, which records the targets the attack hit so the damage can be applied to them from the damage card.",
+        "Hit": "Only when the attack hit",
+        "Always": "Always",
+        "Off": "Never"
+      }
+    },
+    "Damage": {
+      "Roll": "Roll damage",
+      "RollCritical": "Roll critical damage"
+    }
+  }
+}

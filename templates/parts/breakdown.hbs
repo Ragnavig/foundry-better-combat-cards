@@ -1,0 +1,46 @@
+<div class="dice-tooltip-collapser bccc-breakdown">
+    <div class="dice-tooltip">
+        {{#if breakdown.groups}}
+        {{#each breakdown.groups}}
+        <section class="bccc-group">
+            <header class="bccc-group-header">
+                {{#if icon}}<img src="{{ icon }}" alt="{{ label }}">{{/if}}
+                <span class="label">{{ label }}</span>
+                {{#if critical}}
+                <span class="bccc-tag" data-tooltip aria-label="{{ localize "BCCC.Breakdown.Crit" }}">
+                    {{ localize "DND5E.Critical" }}
+                </span>
+                {{/if}}
+                <span class="value">{{ total }}</span>
+            </header>
+            {{#each entries}}
+            {{> "bccc.breakdown-entry" }}
+            {{/each}}
+        </section>
+        {{/each}}
+        {{else}}
+        {{#each breakdown.entries}}
+        {{> "bccc.breakdown-entry" }}
+        {{/each}}
+        {{/if}}
+
+        {{#unless breakdown.entries.length}}
+        {{#unless breakdown.groups.length}}
+        <p class="bccc-empty">{{ localize "BCCC.Breakdown.NoSources" }}</p>
+        {{/unless}}
+        {{/unless}}
+
+        <section class="tooltip-part constant-term bccc-sum">
+            <div class="dice">
+                <span class="flavor">{{ localize "BCCC.Breakdown.Total" }}</span>
+                <div class="total">
+                    <span class="value">{{ breakdown.total }}</span>
+                </div>
+            </div>
+        </section>
+
+        {{#if breakdown.approximate}}
+        <p class="bccc-empty">{{ localize "BCCC.Breakdown.Approximate" }}</p>
+        {{/if}}
+    </div>
+</div>

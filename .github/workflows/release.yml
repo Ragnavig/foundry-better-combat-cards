@@ -1,0 +1,56 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Derive version from tag
+        id: version
+        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Stamp version and download URL into module.json
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          version = os.environ["VERSION"]
+          repo = os.environ["REPO_URL"]
+          with open("module.json", encoding="utf-8") as f:
+              manifest = json.load(f)
+          manifest["version"] = version
+          manifest["url"] = repo
+          manifest["manifest"] = f"{repo}/releases/latest/download/module.json"
+          manifest["download"] = f"{repo}/releases/download/v{version}/module.zip"
+          with open("module.json", "w", encoding="utf-8") as f:
+              json.dump(manifest, f, indent=2, ensure_ascii=False)
+              f.write("\n")
+          PY
+
+      - name: Build module.zip
+        run: |
+          zip -r module.zip module.json README.md LICENSE CHANGELOG.md scripts styles lang templates \
+            -x '*.DS_Store'
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" module.json module.zip --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" module.json module.zip \
+              --title "$GITHUB_REF_NAME" \
+              --generate-notes
+          fi

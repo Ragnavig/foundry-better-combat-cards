@@ -1,0 +1,15 @@
+{{#if bccc.targetTools}}
+<section class="icon-row bccc-target-tools">
+    <i class="fa-fw fa-solid fa-crosshairs" aria-label="{{ localize "BCCC.Targets.Tools" }}"></i>
+    <ul class="unlist">
+        {{#each bccc.targetTools}}
+        <li>
+            <button type="button" class="icon" data-action="{{ action }}" data-source="{{ source }}"
+                    data-mode="{{ mode }}" data-tooltip aria-label="{{ localize label }}">
+                <i class="{{ icon }}" inert></i>
+            </button>
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
