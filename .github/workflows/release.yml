@@ -47,15 +47,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # A 0.x tag is published as a pre-release.
-          flags=""
-          case "$GITHUB_REF_NAME" in
-            v0.*) flags="--prerelease" ;;
-          esac
           if gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
             gh release upload "$GITHUB_REF_NAME" module.json module.zip --clobber
           else
             gh release create "$GITHUB_REF_NAME" module.json module.zip \
               --title "$GITHUB_REF_NAME" \
-              --generate-notes $flags
+              --generate-notes
           fi
+
+          # Foundry installs from `releases/latest/download/module.json`, and that URL only
+          # resolves for a full release, so never leave one marked as a pre-release.
+          gh release edit "$GITHUB_REF_NAME" --prerelease=false --latest
