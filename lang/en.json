@@ -106,11 +106,19 @@
         "Hit": "Only when the attack hit",
         "Always": "Always",
         "Off": "Never"
+      },
+      "EffectReminders": {
+        "Name": "Remind about extra damage",
+        "Hint": "When an attack hits a creature carrying an effect of your own that deals extra damage — Hunter's Mark, Hex and anything built the same way — offer to roll it. Only shown to the attacker and the game master."
       }
     },
     "Damage": {
       "Roll": "Roll damage",
       "RollCritical": "Roll critical damage"
+    },
+    "Reminder": {
+      "Label": "Extra damage",
+      "Tooltip": "Roll this effect's extra damage against the creatures this attack hit"
     }
   }
 }

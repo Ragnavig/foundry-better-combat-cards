@@ -106,11 +106,19 @@
         "Hit": "Nur bei einem Treffer",
         "Always": "Immer",
         "Off": "Nie"
+      },
+      "EffectReminders": {
+        "Name": "An Zusatzschaden erinnern",
+        "Hint": "Wenn ein Angriff eine Kreatur trifft, auf der ein eigener Effekt mit Zusatzschaden liegt — Mal des Jägers, Fluch und alles gleich Gebaute — wird angeboten, ihn zu würfeln. Sichtbar nur für den Angreifer und die Spielleitung."
       }
     },
     "Damage": {
       "Roll": "Schaden würfeln",
       "RollCritical": "Kritischen Schaden würfeln"
+    },
+    "Reminder": {
+      "Label": "Zusätzlicher Schaden",
+      "Tooltip": "Zusatzschaden dieses Effekts gegen die getroffenen Kreaturen würfeln"
     }
   }
 }

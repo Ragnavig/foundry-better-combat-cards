@@ -1,6 +1,7 @@
 import { TEMPLATES, loc, logError, setting } from "./const.mjs";
 import { buildAdvantageInfo, buildDamageBreakdown, buildRollBreakdown } from "./breakdown.mjs";
 import { buildTargetTools, changeTargets, damageTargetsFor, removeTarget } from "./targets.mjs";
+import { buildEffectReminders, rollReminderDamage } from "./reminders.mjs";
 import { templatesReady } from "./templates.mjs";
 
 /**
@@ -40,6 +41,7 @@ function moduleActions() {
   return {
     bcccRemoveTarget: onRemoveTarget,
     bcccRollDamage: onRollDamage,
+    bcccRollEffectDamage: onRollEffectDamage,
     bcccSetTargets: onSetTargets
   };
 }
@@ -150,6 +152,7 @@ async function prepareAttackContext(model, context) {
   if ( !roll?._evaluated || !message.isContentVisible ) return;
 
   context.bccc.damageButton = buildDamageButton(model, roll);
+  context.bccc.reminders = buildEffectReminders(model);
 
   for ( const target of context.targets ?? [] ) {
     if ( !target.showAC || (target.ac === null) ) continue;
@@ -300,4 +303,17 @@ async function onRollDamage(event, target) {
   } finally {
     target.disabled = false;
   }
+}
+
+/* -------------------------------------------- */
+
+/**
+ * Roll the extra damage of an effect the attacker has riding on the creature they hit.
+ * @this {ChatMessageDataModel}
+ * @param {PointerEvent} event  Triggering click event.
+ * @param {HTMLElement} target  Button that was clicked.
+ */
+async function onRollEffectDamage(event, target) {
+  event.stopPropagation();
+  await rollReminderDamage(event, target, damageTargetsFor);
 }

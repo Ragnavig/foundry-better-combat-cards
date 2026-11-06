@@ -51,6 +51,17 @@ attack hit** on the damage card instead of whatever happens to be targeted at th
 moment. The GM then applies the damage to exactly those creatures from the damage
 card's tray.
 
+**A reminder about your own extra damage.** The system models Hunter's Mark, Hex and
+anything built like them as an effect that changes nothing about the roll plus a separate
+damage activity, because a roll's rules can only see the data of whoever rolls, never the
+target — so no rule can say "only against the creature I marked". Nothing in the system
+therefore reminds you that the extra damage is still waiting. This module does: when an
+attack hits a creature carrying an effect **that came from an item of the attacking
+actor**, the card offers to roll that effect's damage, against the creatures the attack
+hit. It is shown to the attacker and the game master only — another player is never
+reminded of someone else's mark, and a monster's own effect on the same creature never
+produces a hint.
+
 **Target management after the fact.** The recorded targets of a card can be changed
 afterwards: take your current targets or your selected tokens, add to the existing ones,
 remove a single target, or clear them all. On a damage card you can also take over the
@@ -85,6 +96,7 @@ Client settings — each player decides for themselves:
 | Show advantage badge | on | mark advantage/disadvantage directly on the roll |
 | Show hit margin | on | by how much the attack beat or missed the AC |
 | Damage button on attack cards | only when the attack hit | offer *Roll damage* on the attack card (only on a hit / always / never) |
+| Remind about extra damage | on | offer to roll the extra damage of your own effects on what you hit |
 | Resolve effect names | on | name the active effect behind a bonus |
 
 World setting, Gamemaster only:

@@ -73,5 +73,25 @@
 </section>
 {{/with}}
 
+{{!-- Extra damage the attacker has riding on what they hit --}}
+{{#if bccc.reminders}}
+<section class="icon-row bccc-reminders">
+    <i class="fa-fw fa-solid fa-wand-sparkles" aria-label="{{ localize "BCCC.Reminder.Label" }}"></i>
+    <ul class="unlist">
+        {{#each bccc.reminders}}
+        <li>
+            <button type="button" class="bccc-effect-damage{{#if critical}} critical{{/if}}"
+                    data-action="bcccRollEffectDamage" data-attack-id="{{ attackId }}"
+                    data-item-uuid="{{ itemUuid }}" data-activity-id="{{ activityId }}"
+                    data-tooltip aria-label="{{ localize "BCCC.Reminder.Tooltip" }}">
+                {{#if img}}<img src="{{ img }}" alt="{{ name }}">{{/if}}
+                <span>{{ label }}</span>
+            </button>
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
+
 {{!-- Target tools --}}
 {{> "bccc.target-tools" }}

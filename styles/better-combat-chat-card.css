@@ -282,3 +282,41 @@
 .message-content .bccc-damage-row > ul > li {
   flex: 1;
 }
+
+/* --- Effect reminders --- */
+
+.message-content .bccc-reminders > ul {
+  display: flex;
+  flex: 1;
+  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.message-content .bccc-reminders > ul > li {
+  flex: 1;
+}
+
+.message-content button.bccc-effect-damage {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  padding: 2px 8px;
+  font-family: var(--dnd5e-font-roboto-condensed, var(--font-primary));
+  font-size: var(--font-size-12);
+  cursor: var(--cursor-pointer);
+}
+
+.message-content button.bccc-effect-damage > img {
+  flex: 0 0 auto;
+  inline-size: 18px;
+  block-size: 18px;
+  border: none;
+  border-radius: 2px;
+}
+
+.message-content button.bccc-effect-damage.critical {
+  border-color: var(--dnd5e-color-success, var(--color-level-success));
+}

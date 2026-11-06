@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.0.3
+
+- An attack that hits a creature carrying an effect of the attacker's own which deals
+  extra damage — Hunter's Mark, Hex, and anything built the same way — now offers to roll
+  that damage from the attack card, against the creatures the attack hit, and as critical
+  damage after a critical hit.
+- The reminder is only shown to the attacker and the game master, and only for effects
+  whose source item belongs to the attacking actor, so nobody is reminded of a mark they
+  cannot use.
+
 ## 0.0.2
 
 Readability pass on the breakdown, from feedback on the first version.

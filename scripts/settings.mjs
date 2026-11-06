@@ -45,6 +45,13 @@ export function registerSettings() {
     default: true
   });
 
+  register("effectReminders", {
+    name: "BCCC.Settings.EffectReminders.Name",
+    hint: "BCCC.Settings.EffectReminders.Hint",
+    type: Boolean,
+    default: true
+  });
+
   register("effectNames", {
     name: "BCCC.Settings.EffectNames.Name",
     hint: "BCCC.Settings.EffectNames.Hint",
